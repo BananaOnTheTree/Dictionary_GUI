@@ -18,10 +18,8 @@ public class QuizModel {
         try {
             if (FileHandler.saveFileExist()) {
                 load();
-                System.out.println("load file suscessfuly load");
             }
         } catch (Exception e) {
-            System.out.println("Loading failed. Maybe trying removing user.save in the working directory");
             e.printStackTrace();
         }
     }
