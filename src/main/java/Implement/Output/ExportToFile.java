@@ -1,5 +1,6 @@
 package Implement.Output;
 
+import Implement.Bookmark;
 import Implement.WordStorage.DictionaryMap;
 import Implement.WordStorage.Trie.Trie;
 import Implement.WordStorage.Trie.TrieNode;
@@ -27,6 +28,24 @@ public class ExportToFile {
       }
     } catch (Exception e) {
       e.printStackTrace();
+    }
+  }
+
+  public static void exportBookmark(File file) {
+    try {
+      if (file == null) {
+        String Path = "src/main/resources/output.txt";
+        file = new File(Path);
+        file.createNewFile();
+      }
+      FileWriter writer = new FileWriter(file);
+      BufferedWriter bufferedWriter = new BufferedWriter(writer);
+      String[] word = Bookmark.getList();
+      for (String tmp : word) {
+        bufferedWriter.write(tmp + '\n');
+      }
+    } catch (Exception e) {
+        e.printStackTrace();
     }
   }
 }

@@ -1,6 +1,7 @@
 package Game.Quiz.utils;
 import Dictionary.Dictionary.dictionaryApp;
 import Game.Quiz.models.QuizModel;
+import Implement.Output.ExportToFile;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
@@ -13,6 +14,7 @@ import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import java.io.IOException;
 import java.util.Optional;
 
 public class Helper {
@@ -33,6 +35,8 @@ public class Helper {
         if (ButtonType.NO.equals(closeResponse.get())) {
             QuizModel model = dictionaryApp.getQuizModel();
             model.save();
+            ExportToFile.exportBookmark(null);
+            ExportToFile.export(null);
             Platform.exit();
             System.exit(0);
         }
@@ -42,7 +46,7 @@ public class Helper {
         } else {
             event.consume();
         }
-    };
+    } ;
 
     public static Popup createPopup(final String message) {
         final Popup popup = new Popup();

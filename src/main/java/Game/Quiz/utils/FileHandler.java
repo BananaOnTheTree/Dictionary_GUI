@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class FileHandler {
     public static final String CATEGORY_FOLDER = "categories";
     public static final String SAVE_FILENAME = "user.save";
-
+    public static final String SAVE_FIlEDICTIONARY = "dictionariesBackup.txt";
     public static ArrayList<Category> loadCategory() {
 
         ArrayList<Category> result = new ArrayList<Category>();
@@ -56,6 +56,7 @@ public class FileHandler {
         }
 
     }
+
     public static ObjectDB loadDB() {
         ObjectDB db = null;
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(SAVE_FILENAME))) {
