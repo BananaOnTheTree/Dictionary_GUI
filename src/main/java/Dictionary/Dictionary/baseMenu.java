@@ -21,6 +21,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public abstract class baseMenu implements Initializable {
+  public static String PNG = ".png";
+  public static String GIF = ".gif";
   @FXML
   protected Button imgSearch = new Button();
   @FXML
@@ -44,9 +46,9 @@ public abstract class baseMenu implements Initializable {
     return new File(path).toURI().toString();
   }
 
-  protected ImageView getImage(String img, int h, int w) {
+  protected ImageView getImage(String img, int h, int w, String type) {
     ImageView ret = new ImageView(new Image(getFile(
-        "src/main/resources/Images/" + img + ".png")));
+        "src/main/resources/Images/" + img + type)));
     ret.setFitHeight(h);
     ret.setFitWidth(w);
     return ret;
@@ -57,13 +59,27 @@ public abstract class baseMenu implements Initializable {
     Tooltip.install(tmp, k);
   }
 
+  void setImage(Button btn, String name) {
+    Image staticImage = new Image("file:src/main/resources/Images/" + name + PNG);
+    Image gifImage = new Image("file:src/main/resources/Images/" + name + GIF);
+    ImageView image = new ImageView(staticImage);
+    image.setFitWidth(40); image.setFitHeight(40);
+    btn.setGraphic(image);
+    btn.setOnMouseEntered(event -> {
+      image.setImage(gifImage);
+    });
+    btn.setOnMouseExited(event -> {
+      image.setImage(staticImage);
+    });
+  }
+
   public void initialize(URL url, ResourceBundle rb) {
-    imgSearch.setGraphic(getImage("search", 40, 40));
-    imgBookmark.setGraphic(getImage("bookmark", 40, 40));
-    imgHistory.setGraphic(getImage("history", 40, 40));
-    imgAPI.setGraphic(getImage("api", 40, 40));
-    imgTranslate.setGraphic(getImage("translate", 40, 40));
-    imgGame.setGraphic(getImage("game", 40, 40));
+    setImage(imgSearch, "search");
+    setImage(imgBookmark, "bookmark");
+    setImage(imgHistory, "history");
+    setImage(imgAPI, "api");
+    setImage(imgTranslate, "translate");
+    setImage(imgGame, "game");
     setStyle(imgSearch, "toHandCursor"); setStyle(imgBookmark, "toHandCursor");
     setStyle(imgHistory, "toHandCursor"); setStyle(imgAPI, "toHandCursor");
     setStyle(imgTranslate, "toHandCursor"); setStyle(imgGame, "toHandCursor");

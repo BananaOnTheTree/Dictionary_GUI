@@ -151,8 +151,8 @@ public class mainController extends baseMenu implements Initializable {
     setStyle(imgSpeaker, "imageViewStyle"); imgAdd.setVisible(false);
     imgSearch.toFront(); imgBookmark.toFront(); imgHistory.toFront(); imgAPI.toFront();
     setEditor(false); transition.setNode(imgToggle);
-    importBtn.setGraphic(getImage("import", 23,23));
-    exportBtn.setGraphic(getImage("export", 23,23));
+    importBtn.setGraphic(getImage("import", 23,23, PNG));
+    exportBtn.setGraphic(getImage("export", 23,23, PNG));
   }
 
   void setMeaningOfWord(String mean) {

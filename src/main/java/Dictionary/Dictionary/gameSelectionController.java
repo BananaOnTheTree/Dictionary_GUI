@@ -18,8 +18,8 @@ public class gameSelectionController extends baseMenu implements Initializable {
 
   public void initialize(URL url, ResourceBundle rb) {
     super.initialize(url, rb);
-    anagramBtn.setGraphic(getImage("anagram", 225, 225));
-    quizBtn.setGraphic(getImage("Quiz", 225, 225));
+    anagramBtn.setGraphic(getImage("anagram", 225, 225, PNG));
+    quizBtn.setGraphic(getImage("Quiz", 225, 225, PNG));
     setStyle(anagramBtn, "toHandCursor");
     setStyle(quizBtn, "toHandCursor");
   }
