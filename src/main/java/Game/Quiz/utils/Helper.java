@@ -35,7 +35,6 @@ public class Helper {
         if (ButtonType.NO.equals(closeResponse.get())) {
             QuizModel model = dictionaryApp.getQuizModel();
             model.save();
-            ExportToFile.exportBookmark(null);
             ExportToFile.export(null);
             Platform.exit();
             System.exit(0);
