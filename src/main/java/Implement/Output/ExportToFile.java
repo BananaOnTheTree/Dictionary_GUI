@@ -21,10 +21,10 @@ public class ExportToFile {
       String[] word = DictionaryMap.getKey();
       for (String tmp : word) {
         TrieNode node = Trie.find(tmp);
-        bufferedWriter.write(node.getFullWord() + '\n');
-        bufferedWriter.write(node.getSpelling() + '\n');
-        bufferedWriter.write(node.getAudio() + '\n');
-        bufferedWriter.write(node.getMeaning() + '\n');
+        bufferedWriter.write(node.getFullWord().trim() + "\n");
+        bufferedWriter.write(node.getSpelling().trim() + "\n");
+        bufferedWriter.write(node.getAudio().trim() + "\n");
+        bufferedWriter.write(node.getMeaning().trim() + "\n\n");
       }
     } catch (Exception e) {
       e.printStackTrace();

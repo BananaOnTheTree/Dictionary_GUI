@@ -8,6 +8,7 @@ import java.io.File;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -20,7 +21,7 @@ public class addWordController {
   @FXML
   TextField tfPhonetic;
   @FXML
-  TextField tfMeaning;
+  TextArea tfMeaning;
   @FXML
   Button btnAudio = new Button();
 
@@ -38,6 +39,9 @@ public class addWordController {
     if (word.isBlank() || phonetic.isBlank() || meaning.isBlank()) {
       return;
     }
+    if (meaning.charAt(meaning.length() - 1) != '\n') {
+      meaning += '\n';
+    }
     Trie.add(word, phonetic, meaning, audio);
     DictionaryMap.add(word, meaning);
     History.add(word);
@@ -54,7 +58,7 @@ public class addWordController {
     fileChooser.setInitialDirectory(initLocation);
     File selected = fileChooser.showOpenDialog(stage);
     if (selected != null) {
-      audio = selected.toURI().toString() + '\n';
+      audio = selected.toURI().toString();
       btnAudio.setText(selected.getName());
     } else {
       audio = "";
