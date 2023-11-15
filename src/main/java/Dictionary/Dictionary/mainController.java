@@ -100,6 +100,7 @@ public class mainController extends baseMenu implements Initializable {
   final String IMGPath = "src/main/resources/Images/";
   private boolean noSound = true;
   String apiAudio = "";
+  private MediaPlayer player;
   private final TranslateTransition transition = new TranslateTransition(Duration.millis(130));
 
   void setEditor(boolean type) {
@@ -464,7 +465,8 @@ public class mainController extends baseMenu implements Initializable {
 
   public void playMedia(MouseEvent e) {
     Media media = new Media(apiAudio);
-    MediaPlayer player = new MediaPlayer(media);
+    player = new MediaPlayer(media);
+    player.setStartTime(Duration.ZERO);
     if (player.getStatus() == Status.PLAYING) {
       player.stop();
     }
