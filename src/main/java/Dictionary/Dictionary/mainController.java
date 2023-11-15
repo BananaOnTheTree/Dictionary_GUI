@@ -12,6 +12,7 @@ import static Dictionary.Dictionary.dictionaryApp.infoScene;
 import static Dictionary.Dictionary.dictionaryApp.translateControl;
 
 import Implement.Bookmark;
+import Implement.FileDownloader;
 import Implement.History;
 import Implement.Input.AddFromAPI;
 import Implement.Input.AddFromFile;
@@ -207,6 +208,13 @@ public class mainController extends baseMenu implements Initializable {
     searchBar.setText(currentWord);
     lblWord.setText(currentWord);
     spelling.setText(node.getSpelling());
+    if (!noSound && apiAudio.contains("http")) {
+      String savePath = "src/main/resources/Audio/" + node.getFullWord() + ".mp3";
+      File file = new File(savePath);
+      if (file.exists()) {
+        apiAudio = file.toURI().toString();
+      }
+    }
     setMeaningOfWord(node.getMeaning());
     imgAdd.setVisible(false);
     if (!node.getBookmarked()) {
@@ -608,5 +616,11 @@ public class mainController extends baseMenu implements Initializable {
             new Image(
                 new File("src/main/resources/Images/infoIcon.png").toURI().toString()));
     stage1.showAndWait();
+  }
+
+  public void autoGetAudio() {
+    for (String i : DictionaryMap.getKey()) {
+      setContent(Trie.find(i));
+    }
   }
 }
