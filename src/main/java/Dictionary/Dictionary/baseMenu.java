@@ -67,9 +67,13 @@ public abstract class baseMenu implements Initializable {
     btn.setGraphic(image);
     btn.setOnMouseEntered(event -> {
       image.setImage(gifImage);
+      image.setFitWidth(47); image.setFitHeight(47);
+      btn.setPrefWidth(53); btn.setPrefHeight(53);
     });
     btn.setOnMouseExited(event -> {
       image.setImage(staticImage);
+      image.setFitWidth(40); image.setFitHeight(40);
+      btn.setPrefWidth(45); btn.setPrefHeight(45);
     });
   }
 

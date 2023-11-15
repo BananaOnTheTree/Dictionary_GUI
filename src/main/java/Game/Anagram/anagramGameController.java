@@ -146,7 +146,7 @@ public class anagramGameController implements Initializable {
     lblScore.setText(score + "");
     letter.clear();
     tmp = "";
-    while (!(tmp.length() >= minLength && tmp.length() <= maxLength)) {
+    while (!(tmp.length() >= minLength && tmp.length() <= maxLength && tmp.matches("^\\p{ASCII}+$"))) {
       tmp = DictionaryMap.getRandom();
     }
     for (int i = 0; i < tmp.length(); i++) {

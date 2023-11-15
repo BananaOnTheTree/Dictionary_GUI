@@ -56,7 +56,7 @@
             <Font name="Arial Black" size="32.0" />
          </font>
       </Label>
-      <ImageView fitHeight="137.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+      <ImageView fitHeight="34.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <image>
             <Image url="@../../Images/Timer.gif" />
          </image>
@@ -69,7 +69,7 @@
             <Image url="@../../Images/skip.png" />
          </image>
       </ImageView>
-      <TextFlow fx:id="timer" prefHeight="164.0" prefWidth="479.0" GridPane.columnIndex="1">
+      <TextFlow fx:id="timer" prefHeight="40.0" prefWidth="209.0" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets bottom="50.0" top="60.0" />
          </GridPane.margin>

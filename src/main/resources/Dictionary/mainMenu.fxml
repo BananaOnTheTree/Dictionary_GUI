@@ -53,12 +53,12 @@
                   <Insets top="15.0" />
                </GridPane.margin>
             </ImageView>
-            <Button fx:id="imgSearch" maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#menuSearch" prefHeight="45.0" prefWidth="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Button fx:id="imgBookmark" maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#menuBookmark" prefHeight="45.0" prefWidth="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button fx:id="imgHistory" maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#menuHistory" prefHeight="45.0" prefWidth="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button fx:id="imgAPI" maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#menuAPI" prefHeight="45.0" prefWidth="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button fx:id="imgTranslate" maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#menuTranslate" prefHeight="45.0" prefWidth="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <Button fx:id="imgGame" maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#menuGame" prefHeight="45.0" prefWidth="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+            <Button fx:id="imgSearch" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#menuSearch" prefHeight="45.0" prefWidth="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="imgBookmark" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#menuBookmark" prefHeight="45.0" prefWidth="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="imgHistory" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#menuHistory" prefHeight="45.0" prefWidth="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="imgAPI" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#menuAPI" prefHeight="45.0" prefWidth="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="imgTranslate" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#menuTranslate" prefHeight="45.0" prefWidth="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+            <Button fx:id="imgGame" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#menuGame" prefHeight="45.0" prefWidth="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
       <GridPane maxHeight="800.0" prefHeight="800.0">

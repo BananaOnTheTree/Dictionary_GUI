@@ -41,7 +41,7 @@
             <Font name="Arial Bold" size="96.0" />
          </font>
       </Label>
-      <ImageView fitHeight="95.0" fitWidth="95.0" onMouseClicked="#toMenu" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+      <ImageView fx:id="exitBtn" fitHeight="95.0" fitWidth="95.0" onMouseClicked="#toMenu" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <image>
             <Image url="@../../Images/exit.png" />
          </image>
@@ -49,7 +49,7 @@
             <Insets bottom="20.0" />
          </GridPane.margin>
       </ImageView>
-      <ImageView fitHeight="95.0" fitWidth="95.0" onMouseClicked="#retry" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+      <ImageView fx:id="retryBtn" fitHeight="95.0" fitWidth="95.0" onMouseClicked="#retry" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <image>
             <Image url="@../../Images/retry.png" />
          </image>
