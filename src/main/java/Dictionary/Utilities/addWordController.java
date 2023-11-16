@@ -47,6 +47,8 @@ public class addWordController {
     History.add(word);
     Stage stage = (Stage) tfWord.getScene().getWindow();
     stage.close();
+    tfMeaning.setText(""); tfPhonetic.setText("");
+    audio = ""; btnAudio.setText("Chọn file");
   }
 
   @FXML
