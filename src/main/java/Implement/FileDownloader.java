@@ -6,18 +6,25 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
+import javafx.application.Platform;
 
 public class FileDownloader {
-  public static String download(String fileName, String fileUrl) {
-    String savePath = "src/main/resources/Audio/" + fileName + ".mp3";
-    try {
-      downloadFile(fileUrl, savePath);
-      File file = new File(savePath);
-      return file.toURI().toString();
-    } catch (IOException ex) {
-      System.err.println("Error downloading file: " + ex.getMessage());
-    }
-    return "";
+  public interface Callback {
+    void onSuccess(String str);
+  }
+
+  public static void download(String fileName, String fileUrl, Callback callback) {
+    Thread thread = new Thread(() -> {
+      String savePath = "src/main/resources/Audio/" + fileName + ".mp3";
+      try {
+        downloadFile(fileUrl, savePath);
+        File file = new File(savePath);
+        Platform.runLater(() -> callback.onSuccess(file.toURI().toString()));
+      } catch (IOException ex) {
+        System.err.println("Error downloading file: " + ex.getMessage());
+      }
+    });
+    thread.start();
   }
 
   private static void downloadFile(String fileUrl, String savePath) throws IOException {

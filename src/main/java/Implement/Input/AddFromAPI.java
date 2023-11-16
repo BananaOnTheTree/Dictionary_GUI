@@ -12,7 +12,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 public class AddFromAPI {
-
   public interface Callback {
     void onSuccess(DictionaryEntry entry);
   }
@@ -20,7 +19,6 @@ public class AddFromAPI {
   public void getWord(String str, Callback callback) {
     Thread thread = new Thread(() -> {
       HttpClient httpClient = HttpClients.createDefault();
-
       try {
         String encodedStr = URLEncoder.encode(str, StandardCharsets.UTF_8);
         String apiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/" + encodedStr;

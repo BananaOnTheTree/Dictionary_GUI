@@ -94,7 +94,7 @@ public abstract class baseMenu implements Initializable {
   }
 
   void toggleMenu(Node img) {
-    transition.setToY(img.getLayoutY() - 10 - imgToggle.getLayoutY());
+    transition.setToY(img.getLayoutY() - 6.5 - imgToggle.getLayoutY());
     transition.play();
   }
 

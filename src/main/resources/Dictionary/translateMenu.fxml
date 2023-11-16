@@ -32,7 +32,7 @@
                   <Image url="@../Images/background1.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgToggle" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <ImageView fx:id="imgToggle" fitHeight="65.0" fitWidth="89.0" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <image>
                   <Image url="@../Images/Toggle.png" />
                </image>

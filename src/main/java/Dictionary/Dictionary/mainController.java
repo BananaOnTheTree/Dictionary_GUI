@@ -51,6 +51,7 @@ import javafx.scene.media.MediaPlayer.Status;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
@@ -153,6 +154,7 @@ public class mainController extends baseMenu implements Initializable {
     setStyle(imgSpeaker, "imageViewStyle"); imgAdd.setVisible(false);
     imgSearch.toFront(); imgBookmark.toFront(); imgHistory.toFront(); imgAPI.toFront();
     setEditor(false); transition.setNode(imgToggle);
+    spelling.setTextFill(Color.BLUE);
     importBtn.setGraphic(getImage("import", 23,23, PNG));
     exportBtn.setGraphic(getImage("export", 23,23, PNG));
   }
@@ -175,7 +177,7 @@ public class mainController extends baseMenu implements Initializable {
       }
       if (tmp.charAt(0) == '☆') {
         text = new Text("\n" + tmp + "\n");
-        text.setFont(Font.font("Times New Roman", 25));
+        text.setFont(Font.font("Times New Roman", FontWeight.BOLD, 25));
         text.setFill(Color.RED);
       }
       meaning.getChildren().add(text);
@@ -211,7 +213,13 @@ public class mainController extends baseMenu implements Initializable {
     if (!noSound && apiAudio.contains("http")) {
       String savePath = "src/main/resources/Audio/" + node.getFullWord() + ".mp3";
       File file = new File(savePath);
-      if (file.exists()) {
+      if (!file.exists()) {
+        FileDownloader.download(node.getFullWord(), apiAudio, audio -> {
+          if (audio != null && !audio.isBlank()) {
+            apiAudio = audio;
+          }
+        });
+      } else {
         apiAudio = file.toURI().toString();
       }
     }
